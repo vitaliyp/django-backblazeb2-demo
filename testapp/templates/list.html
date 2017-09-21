@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for f in files %}
+    <a href="/testapp/download/{{ f.id }}">Download</a> {{ f.myfile.name }} {{ f.size }} bytes
+        <br>
+    {% endfor %}
+{% endblock %}
