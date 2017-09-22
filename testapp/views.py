@@ -38,5 +38,5 @@ def download_file(request, file_id):
         response = HttpResponse(file_wrapper, content_type=file_mimetype)
         response['X-Sendfile'] = f.myfile.name
         response['Content-Length'] = f.size
-        response['Content-Disposition'] = 'attachment; filename=%s' % os.path.basename(f.myfile.name)
+        response['Content-Disposition'] = 'attachment; filename=%s' % (f.myfile.name.split('/')[-1])
         return response
